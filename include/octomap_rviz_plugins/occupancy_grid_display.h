@@ -77,10 +77,10 @@ private Q_SLOTS:
   void updateQueueSize();
   void updateTopic();
   void updateTreeDepth();
+  void updateUnknownDistance();
   void updateOctreeRenderMode();
   void updateOctreeColorMode();
   void updateAlpha();
-  void updateOccupancyThreshold();
   void updateMaxHeight();
   void updateMinHeight();
 
@@ -120,14 +120,15 @@ protected:
   rviz::EnumProperty* octree_render_property_;
   rviz::EnumProperty* octree_coloring_property_;
   rviz::IntProperty* tree_depth_property_;
+  rviz::IntProperty* unknown_distance_property_;
   rviz::FloatProperty* alpha_property_;
-  rviz::FloatProperty* occupancy_threshold_property_;
   rviz::FloatProperty* max_height_property_;
   rviz::FloatProperty* min_height_property_;
 
   u_int32_t queue_size_;
   uint32_t messages_received_;
   double color_factor_;
+  int search_radius_;
 };
 
 template <typename OcTreeType>
